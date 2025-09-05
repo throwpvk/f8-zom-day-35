@@ -1,0 +1,82 @@
+.root {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+.topBar {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.homeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: cadetblue;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.homeBtn:hover {
+  background: darkcyan;
+}
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+.card h2 {
+  margin: 0 0 10px;
+  color: cadetblue;
+}
+select,
+button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 5px 0;
+  border: none;
+}
+select {
+  background: #f3f3f3;
+}
+button {
+  background: cadetblue;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+button:hover {
+  background: darkcyan;
+}
+.emoji {
+  font-size: 2.5rem;
+}
+.info {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+@media (max-width: 900px) {
+  .root {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+}
+
+

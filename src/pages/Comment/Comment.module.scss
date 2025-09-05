@@ -1,0 +1,115 @@
+.root {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 15px;
+  margin: 30px auto;
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.homeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: cadetblue;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.homeBtn:hover {
+  background: darkcyan;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 6px solid #ccc;
+  border-top-color: cadetblue;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.commentCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  gap: 10px;
+}
+.commentCard img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.commentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.commentInfo h4 {
+  margin: 0;
+  color: cadetblue;
+}
+.commentInfo span {
+  font-size: 0.8rem;
+  color: gray;
+}
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.form textarea {
+  resize: vertical;
+  min-height: 60px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+.form button {
+  align-self: flex-end;
+  background: cadetblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.form button:hover {
+  background: darkcyan;
+}
+
+
