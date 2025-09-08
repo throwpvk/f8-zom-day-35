@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import Counter from "../../pages/Counter";
 import Todo from "../../pages/Todo";
@@ -9,7 +9,7 @@ import Weather from "../../pages/Weather";
 
 function AppRoutes() {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
@@ -20,7 +20,7 @@ function AppRoutes() {
         <Route path="/weather" element={<Weather />} />
         <Route path="*" element={<Home />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
