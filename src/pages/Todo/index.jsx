@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Todo.module.scss";
+import { Link } from "react-router-dom";
 
 function Display({ children }) {
   return <h1 className={styles.title}>{children}</h1>;
@@ -19,7 +20,10 @@ function Modal({ visible, onClose, children }) {
     if (e.target === e.currentTarget) onClose();
   };
   return (
-    <div className={`${styles.modal} ${styles.show}`} onClick={handleOverlayClick}>
+    <div
+      className={`${styles.modal} ${styles.show}`}
+      onClick={handleOverlayClick}
+    >
       <div className={styles.modalContent}>
         {children}
         <Button onClick={onClose}>Close</Button>
@@ -51,7 +55,9 @@ function Task({ task, onToggle, onDelete }) {
   return (
     <div className={styles.task}>
       <input type="checkbox" checked={task.completed} onChange={onToggle} />
-      <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+      <span
+        style={{ textDecoration: task.completed ? "line-through" : "none" }}
+      >
         {task.text}
       </span>
       <button className={styles.deleteBtn} onClick={onDelete}>
@@ -96,7 +102,9 @@ function Todo() {
   };
 
   const toggleTask = (id) => {
-    setTasks(tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)));
+    setTasks(
+      tasks.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t))
+    );
   };
 
   const deleteTask = (id) => {
@@ -111,8 +119,10 @@ function Todo() {
         <>
           <nav className={styles.nav}>
             <div>
-              <Button onClick={() => (window.location.href = "/")}>
-                <i className="fa-solid fa-house"></i>
+              <Button>
+                <Link to="/">
+                  <i className="fa-solid fa-house"></i>
+                </Link>
               </Button>
               <Button onClick={() => setModalVisible(true)}>
                 <i className="fa-solid fa-plus"></i>
@@ -120,7 +130,8 @@ function Todo() {
             </div>
             {tasks.length > 0 && (
               <span className={styles.counter}>
-                {tasks.filter((t) => t.completed).length} / {tasks.length} completed
+                {tasks.filter((t) => t.completed).length} / {tasks.length}{" "}
+                completed
               </span>
             )}
           </nav>
@@ -135,7 +146,11 @@ function Todo() {
             ))}
           </div>
           <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
-            <TaskInput value={newTask} onChange={setNewTask} onSubmit={handleAddTask} />
+            <TaskInput
+              value={newTask}
+              onChange={setNewTask}
+              onSubmit={handleAddTask}
+            />
           </Modal>
         </>
       )}
@@ -144,5 +159,3 @@ function Todo() {
 }
 
 export default Todo;
-
-
